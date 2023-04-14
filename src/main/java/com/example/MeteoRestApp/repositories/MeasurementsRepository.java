@@ -1,0 +1,14 @@
+package com.example.MeteoRestApp.repositories;
+
+import com.example.MeteoRestApp.models.Measurement;
+import com.example.MeteoRestApp.models.Sensor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface MeasurementsRepository extends JpaRepository<Measurement, Integer> {
+    List<Measurement> findByRainingEquals(Boolean flag);
+
+}
